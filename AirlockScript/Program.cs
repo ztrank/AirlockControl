@@ -154,7 +154,7 @@
             this.AirlockNames.AddRange(this.ini.Get("general", "airlocks").ToString().Split(delimiter.ToCharArray()[0]));
             IMyTerminalBlock timerBlock = this.GridTerminalSystem.GetBlockWithName(timerBlockName);
             
-            if(timerBlock is IMyTimerBlock)
+            if(timerBlock != null && timerBlock.IsSameConstructAs(this.Me) && timerBlock is IMyTimerBlock)
             {
                 this.TimerBlock = (IMyTimerBlock)timerBlock;
             }
