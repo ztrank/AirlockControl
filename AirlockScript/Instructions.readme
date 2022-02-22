@@ -1,0 +1,33 @@
+﻿R e a d m e
+-----------
+
+Commands:
+----------------
+	connect <Airlock Tag> <Log Panel Tag>
+		Connects this block with the required airlock blocks and optional Log Panels. See Log Panel Configuration below.
+		Parameters:
+		- Airlock Tag: Search string for airlock components. Must be the same for all blocks in the airlock.
+			Required Blocks:
+				Interior Door(s) (Door without 'exterior' in the name)
+				Exterior Door(s) (Door with 'exterior' in the name)
+				Air Vent(s)
+				Oxygent Tank(s)
+		- Log Panel Tag (Optional): Search string for log panels for log output.
+	cycle
+		Cycles the airlock based on whether the room is pressurizable (open to the interior) or not (open to the exterior). Use this command for buttons inside the airlock.
+	egress
+		Pressurizes the airlock to allow for engineers from inside to enter.
+	ingress
+		Depressurizes the airlock to allow for engineers from outside to enter.
+
+
+Log Panel Configuration
+-------------------------
+In your log panel you can put an optional value to control the number of visible lines. The logs will remove the top lines first, adding on to the bottom.
+
+In the log panel's CustomData, configurate using the ini format:
+
+[display]
+maxLines=10
+
+This will cause the panel to show a maximum of ten lines.
